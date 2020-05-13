@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 export default function MyFiles({ data }) {
-    console.log(data)
+    console.log(data);
     return (
         <Layout>
             <div>
@@ -44,4 +44,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
