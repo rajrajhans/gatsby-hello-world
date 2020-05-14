@@ -9,6 +9,7 @@ This is a small Gatsby website I built following the official Gatsby tutorial to
 * Dynamically adding pages of the markdown files during build time and mapping posts to newly created pages
 * Adding Progressive Web App (PWA) capability
 * Offline support using service worker
+* Adding Metadata to improve SEO using React Helmet & Gatsby's React Helmet
  
 
 #### Conclusion
