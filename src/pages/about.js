@@ -1,10 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Layout from "../components/layout"
+import Img from "gatsby-image"
+import {graphql} from "gatsby";
 
-export default function About(){
+export default function About( {data} ){
     return(
         <Layout>
             <h1>About Page</h1>
+            <Img className={"image"} fixed={data.file.childImageSharp.fixed} alt={"some image"}/>
             <p style={{textAlign:"justify"}}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis hendrerit mauris et luctus. Nam dapibus risus id lectus sollicitudin tincidunt ut id ligula. Morbi auctor justo at malesuada porta. Mauris ut enim suscipit, imperdiet sapien eu, pulvinar arcu. Nulla lorem sapien, lacinia cursus pretium vitae, fermentum non lorem. Sed dignissim fringilla lectus eu fermentum. Donec imperdiet massa nec dui malesuada dignissim.
             </p>
@@ -14,3 +17,16 @@ export default function About(){
         </Layout>
     )
 };
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "images/image1.jpeg" }) {
+      childImageSharp {
+        fixed(width: 610, height: 300) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+
+`;
